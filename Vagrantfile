@@ -11,7 +11,7 @@ Vagrant.configure("2") do |config|
 	## Configure virtual box
 	config.vm.provider :virtualbox do |vb|
 		vb.customize ["modifyvm", :id, "--memory", "2048"]
-		vb.customize ["setextradata", :id, "VBoxInternal2/SharedFoldersEnableSymlinksCreate/v-root", "1"]
+		vb.customize ["setextradata", :id, "VBoxInternal2/SharedFoldersEnableSymlinksCreate/vagrant", "1"]
 	end
 	
 	config.vm.provision :shell do |shell|
