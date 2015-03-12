@@ -1,7 +1,19 @@
 # ITplusX/dev-vm
 @author: Vaclav Janoch <janoch@itplusx.de>
 
-This
+# Generation of base package
+
+Maybe the virtual box guest addition has not been updated in the used basebox. To be sure we update it manually. Follow the following steps:
+
+1. `vagrant plugin install vagrant-vbguest`
+2. `vagrant up`
+3. Manual steps within vm
+	1. Set date.timezone
+		`vi /etc/php.ini`
+		Serach: `/date.timezone`
+		Change to: `date.timezone = "Europe/Berlin"`
+3. `vagrant package`
+4. Create new version of 
 
 ## Files
 
