@@ -1,0 +1,3 @@
+net-tools:
+  pkg:
+    - installed
