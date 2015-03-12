@@ -1,3 +1,0 @@
-perl:
-  pkg:
-    - installed

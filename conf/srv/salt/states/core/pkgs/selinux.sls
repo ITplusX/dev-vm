@@ -1,2 +1,0 @@
-selinux:
-  - setenforce: 0
