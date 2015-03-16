@@ -2,6 +2,8 @@ Vagrant.configure("2") do |config|
 	
 	config.vm.box = "relativkreativ/centos-7-minimal"
 	config.vm.hostname = "dev-vm.local"
+
+	config.ssh.insert_key = false
 	
 	## Forward ports
 	config.vm.network :forwarded_port, guest: 80, host: 80
