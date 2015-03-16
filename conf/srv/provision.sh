@@ -42,6 +42,7 @@ yum -y install vim tmux screen bind-utils net-tools
 
 # Disable selinux as we are in a dev environment
 sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/sysconfig/selinux
+sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/selinux/config
 
 # Install oh my zsh
 yum -y install zsh
@@ -51,3 +52,6 @@ yum -y install zsh
 firewall-cmd --permanent --zone=public --add-service=http
 firewall-cmd --permanent --zone=public --add-service=https
 firewall-cmd --reload
+
+# We have to reboot to set the selinux setting
+reboot
