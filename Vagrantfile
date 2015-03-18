@@ -14,6 +14,8 @@ Vagrant.configure("2") do |config|
 	config.vm.provider :virtualbox do |vb|
 		vb.customize ["modifyvm", :id, "--memory", "2048"]
 		vb.customize ["setextradata", :id, "VBoxInternal2/SharedFoldersEnableSymlinksCreate/vagrant", "1"]
+		# Display the gui in case of errors
+#		vb.gui = true
 	end
 	
 	config.vm.provision :shell do |shell|

@@ -1,7 +1,7 @@
 # ITplusX/dev-vm
-@author: Vaclav Janoch <janoch@itplusx.de>
 
 # Generation of base package
+
 
 Maybe the virtual box guest addition has not been updated in the used basebox. To be sure we update it manually. Follow the following steps:
 
@@ -11,5 +11,6 @@ Maybe the virtual box guest addition has not been updated in the used basebox. T
 5. Create new version of itplusx/dev-vm
 
 # Todo
+add documentation
 set aliases
-install oh my zsh
+install ohmyzsh

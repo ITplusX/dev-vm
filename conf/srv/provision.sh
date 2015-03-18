@@ -34,8 +34,23 @@ pecl install Imagick
 echo "extension=imagick.so" >> /etc/php.ini
 # Set timezone to php.ini
 sed -i 's/;date.timezone =/date.timezone = \"Europe\/Berlin\"/g' /etc/php.ini
+sed -i 's/memory_limit = 128M/memory_limit = 384M/g' /etc/php.ini
 systemctl start httpd.service
 systemctl enable httpd.service
+
+# Install composer
+curl -sS https://getcomposer.org/installer | php
+mv composer.phar /usr/local/bin/composer
+
+# Install node.js
+yum -y install epel-release
+yum -y install nodejs
+yum -y install npm
+
+# Install global nope packages
+npm install -g bower
+npm install -g inherits
+npm install -g grunt-cli
 
 # Install usefull packages
 yum -y install vim tmux screen bind-utils net-tools
