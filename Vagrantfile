@@ -6,9 +6,8 @@ Vagrant.configure("2") do |config|
 	config.ssh.insert_key = false
 	
 	## Forward ports
-	config.vm.network :forwarded_port, guest: 80, host: 80
-	config.vm.network :forwarded_port, guest: 3306, host: 3306
 	config.vm.network :forwarded_port, guest: 22, host: 22
+	config.vm.network :forwarded_port, guest: 80, host: 80
 
 	## Configure virtual box
 	config.vm.provider :virtualbox do |vb|
@@ -18,7 +17,11 @@ Vagrant.configure("2") do |config|
 #		vb.gui = true
 	end
 	
-	config.vm.provision :shell do |shell|
-		shell.path = "conf/srv/provision.sh"
-	end	
+#	# Run the provisioning - we have to do that manually :-(
+#	config.vm.provision :shell do |shell|
+#		shell.path = "conf/srv/provision.sh"
+#	end
+#	
+#	# Run a script after vm is up
+#	config.vm.provision "shell", path: "conf/srv/afterboot.sh", run: "always"
 end
